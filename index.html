@@ -5,7 +5,9 @@
   <title>פאפא פיצה</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  
   <style>
+    
     /* ===== BODY ===== */
     body {
       margin: 0;
@@ -152,6 +154,103 @@
     .page.active {
       display: block;
     }
+    /* ===== RESPONSIVE - للهاتف والتابلت ===== */
+
+/* شاشات متوسطة (تابلت) */
+@media (max-width: 1024px) {
+  .category-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+  
+  header h1 {
+    font-size: 50px;
+  }
+  
+  .category img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* شاشات صغيرة (هاتف كبير) */
+@media (max-width: 768px) {
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  header h1 {
+    font-size: 36px;
+  }
+  
+  header {
+    padding: 30px 15px;
+  }
+  
+  .home-title {
+    font-size: 22px;
+  }
+  
+  .category {
+    height: 150px;
+    padding: 10px;
+  }
+  
+  .category img {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .category span {
+    font-size: 13px;
+  }
+}
+
+/* شاشات صغيرة جداً (هاتف صغير) */
+@media (max-width: 480px) {
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 0 10px;
+  }
+  
+  header h1 {
+    font-size: 28px;
+  }
+  
+  .category {
+    height: 130px;
+    padding: 8px;
+    border-radius: 15px;
+  }
+  
+  .category img {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .category span {
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  .item img {
+    height: 100px;
+  }
+  
+  .items {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px;
+  }
+  
+  .back {
+    font-size: 18px;
+    padding: 6px 12px;
+  }
+}
+
   </style>
 </head>
 
@@ -461,4 +560,3 @@ function goHome() {
 </script>
 </body>
 </html>
-
