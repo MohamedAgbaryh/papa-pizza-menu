@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;800&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Heebo', Arial, sans-serif;
+  background: #f4f4f4;
+  direction: rtl;
+}
+
+
+header {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* ===== PAGES ===== */
+.page {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.page.active {
+  display: block;
+  opacity: 1;
+}
+
+/* ===== HOME GRID ===== */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 25px;
+  padding: 20px;
+}
+.home-title {
+  text-align: center;
+  font-size: 28px;
+  margin-top: 20px;
+  font-weight: 400;
+  color: #e53935;
+  text-shadow: 2px 2px 6px rgba(0,0,0,5.0); /* ظل داكن */
+}
+
+
+.category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  padding: 15px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  height: 200px;
+}
+
+.category img {
+  width: 250px;   /* زيادة الحجم من 100px إلى 140px */
+  height: 250px;  /* زيادة الحجم من 100px إلى 140px */
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e53935;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+@media (max-width: 600px) {
+  .category img {
+    width: 250px;  /* حجم مناسب للهواتف الصغيرة */
+    height: 250x;
+  }
+}
+
+
+
+.category:hover img {
+  transform: scale(1.1);
+  border-color: #b71c1c;
+}
+
+#home {
+  background: 
+    linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+    url('images/background.jpg') no-repeat center center;
+  background-size: cover;
+  padding: 20px;
+  min-height: calc(100vh - 150px);
+}
+
+.category span {
+  margin-top: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* ===== ITEMS ===== */
+.items img {
+  width: 100%;
+  height: 160px; /* زيادة الحجم من 130px إلى 160px */
+  border-radius: 12px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.item {
+  background: white;
+  padding: 12px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.07);
+  transition: 0.3s;
+}
+.item:hover {
+  transform: translateY(-5px);
+}
+
+.item img {
+  width: 100%;
+  height: 130px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.item span {
+  color: #e53935;
+  font-weight: 800;
+  font-size: 16px;
+}
+
+
+/* ===== BUTTON BACK – MOBILE OPTIMIZED (نسخة محسنة مع Fade) ===== */
+.back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #e53935, #b71c1c);
+  color: white;
+  border: none;
+  padding: 14px 22px;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+  width: 90%;
+  max-width: 320px;
+  margin-bottom: 20px;
+}
+
+.back::before {
+  content: "⬅";
+  font-size: 22px;
+}
+
+.back:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+  background: linear-gradient(135deg, #ff6f60, #b71c1c);
+}
+
+.back:active {
+  transform: scale(0.97);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
